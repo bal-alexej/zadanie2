@@ -1,0 +1,23 @@
+{
+  "name": "zadanie2",
+  "version": "1.0.0",
+  "description": "https://bal-alexej.github.io/zadanie2/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bal-alexej/zadanie2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bal-alexej/zadanie2/issues"
+  },
+  "homepage": "https://github.com/bal-alexej/zadanie2#readme",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
