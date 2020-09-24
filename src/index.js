@@ -1,3 +1,3 @@
-const post = new Post('Webpack Post Title')
+let post = new Post('Webpack Post Title')
 
-cobsole.log('Post to String:', post.toString())
+console.log('Post to String:', post.toString())
