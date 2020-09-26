@@ -19,5 +19,9 @@
   "devDependencies": {
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "html": "^1.0.0",
+    "html-webpack-plugin": "^4.5.0"
   }
 }
