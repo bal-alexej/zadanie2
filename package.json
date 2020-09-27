@@ -4,7 +4,8 @@
   "description": "https://bal-alexej.github.io/zadanie2/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,9 @@
   },
   "dependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.3.0",
     "html": "^1.0.0",
-    "html-webpack-plugin": "^4.5.0"
+    "html-webpack-plugin": "^4.5.0",
+    "styles-loader": "^2.0.0"
   }
 }
