@@ -81,32 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/analytics.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/Post.js":
-/*!*********************!*\
-  !*** ./src/Post.js ***!
-  \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/analytics.js":
+/*!**************************!*\
+  !*** ./src/analytics.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Post; });\nclass Post {\r\n  constructor(title) {\r\n    this.title = title\r\n    this.date = new Date()\r\n  }\r\n\r\n  toString() {\r\n    return JSON.stringify({\r\n      title: this.title,\r\n      date: this.date.toJSON()\r\n    })\r\n  }\r\n}\n\n//# sourceURL=webpack:///./src/Post.js?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post */ \"./src/Post.js\");\n\r\n\r\nlet post = new _Post__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Webpack Post Title')\r\n\r\nconsole.log('Post to String:', post.toString())\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("function createAnalytics() {\r\n  let counter = 0\r\n  let Destroyed = false\r\n\r\nconsole.log('test')\r\n\r\n  const listener = () =>\r\n    counter++\r\n\r\n  document.addEventListener('click', listener)\r\n\r\n  return {\r\n    destroy() {\r\n      document.removeEventListener('click', listener)\r\n      isDestroyed = true\r\n    },\r\n\r\n    getClicks() {\r\n      if (Destroyed) {\r\n        return 'Analytics is destroyed. Total clics =${counter}'\r\n      }\r\n      return counter\r\n    }\r\n  }\r\n}\r\n\r\n\r\nwindow.analytics = createAnalytics()\n\n//# sourceURL=webpack:///./src/analytics.js?");
 
 /***/ })
 
