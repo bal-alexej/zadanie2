@@ -1,3 +1,10 @@
+@import "roboto.css";
+@import "~normalize.css";
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
 .container {
   padding-top: 2rem;
   max-width: 1000px;
@@ -5,6 +12,14 @@
 }
 
 
-h1{
+h1 {
   text-align: center;
+}
+
+.logo {
+  background-image: url("../img/rastr.png");
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
 }
