@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "dependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
     "html": "^1.0.0",
     "html-webpack-plugin": "^4.5.0",
     "styles-loader": "^2.0.0"

@@ -1,6 +1,10 @@
 import Post from './Post'
 import './styles/styles.css'
+import WebpackLogo from './img/rastr.png'
 
-let post = new Post('Webpack Post Title')
+
+const post = new Post('Webpack Post Title', WebpackLogo)
+
+
 
 console.log('Post to String:', post.toString())
