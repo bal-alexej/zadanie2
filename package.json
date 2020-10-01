@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch"
+    "watch": "webpack --mode development --watch",
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -25,10 +26,15 @@
   "dependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.3.0",
+    "csv-loader": "^3.0.3",
     "file-loader": "^6.1.0",
     "html": "^1.0.0",
     "html-webpack-plugin": "^4.5.0",
+    "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
-    "styles-loader": "^2.0.0"
+    "papaparse": "^5.3.0",
+    "styles-loader": "^2.0.0",
+    "webpack-dev-server": "^3.11.0",
+    "xml-loader": "^1.2.1"
   }
 }
