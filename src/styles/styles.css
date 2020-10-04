@@ -1,8 +1,8 @@
 @import "roboto.css";
 @import "~normalize.css";
 
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -10,7 +10,6 @@ body{
   max-width: 1000px;
   margin: 0 auto;
 }
-
 
 h1 {
   text-align: center;

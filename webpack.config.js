@@ -2,6 +2,22 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
+const isDev = process.env.NODE_ENV === "development";
+const isProd = !isDev;
+
+const otimization = () => {
+  const config = {
+     return {
+     splitChunks: {
+      chunks: "all",
+      },
+  };
+return config
+};
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -18,12 +34,17 @@ module.exports = {
     extensions: [".js", "json"], //файлы воспринимаемые webpack по умолчанию
     // alias: { "@s": path.resolve(__dirname, "src/stules") }, //удобное указание до пути файла
   },
+  optimization: optimization(),
   devServer: {
     port: 4200,
+    hot: isDev,
   },
   plugins: [
     new HTMLWebpackPlugin({
       template: "./index.html",
+      minify: {
+        collapseWhitespace: isProd,
+      },
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
@@ -34,14 +55,27 @@ module.exports = {
         },
       ],
     }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
+    }),
   ],
 
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: true,
+              reloadAll: true,
+            },
+          },
+          "css-loader",
+        ],
       },
+
       {
         test: /\.(png|jpg|svg|gif)$/,
         use: ["file-loader"],
