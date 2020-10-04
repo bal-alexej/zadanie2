@@ -4,19 +4,24 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 
-const otimization = () => {
+const optimization = () => {
   const config = {
-     return {
-     splitChunks: {
+    splitChunks: {
       chunks: "all",
-      },
+    },
   };
-return config
+  if (isProd) {
+    config.minimizer = [
+      new OptimizeCssAssetsWebpackPlugin(),
+      new TerserWebpackPlugin(),
+    ];
+  }
+  return config;
 };
 
 module.exports = {
@@ -68,11 +73,26 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: true,
+              hmr: isDev,
               reloadAll: true,
             },
           },
           "css-loader",
+        ],
+      },
+
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: isDev,
+              reloadAll: true,
+            },
+          },
+          "css-loader",
+          "less-loader",
         ],
       },
 

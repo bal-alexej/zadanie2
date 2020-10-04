@@ -352,8 +352,8 @@ template {
   display: none;
 }
 
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -361,7 +361,6 @@ body{
   max-width: 1000px;
   margin: 0 auto;
 }
-
 
 h1 {
   text-align: center;
@@ -374,3 +373,14 @@ h1 {
   width: 200px;
   margin: 0 auto;
 }
+
+.box {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.box h2 {
+  text-align: center;
+  color: border;
+}
+
