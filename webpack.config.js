@@ -1,6 +1,7 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -18,14 +19,23 @@ module.exports = {
     // alias: { "@s": path.resolve(__dirname, "src/stules") }, //удобное указание до пути файла
   },
   devServer: {
-    port: 4200
+    port: 4200,
   },
   plugins: [
     new HTMLWebpackPlugin({
       template: "./index.html",
     }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/img/i.ico"), //откуда и что перемещать,
+          to: path.resolve(__dirname, "dist"), //куда перемещать
+        },
+      ],
+    }),
   ],
+
   module: {
     rules: [
       {
