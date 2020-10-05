@@ -9,7 +9,7 @@ const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plug
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 
-const optimization = () => {
+const optimization = (extra) => {
   const config = {
     splitChunks: {
       chunks: "all",
@@ -21,7 +21,29 @@ const optimization = () => {
       new TerserWebpackPlugin(),
     ];
   }
+
+  if (extra) {
+    loaders.push(extra);
+  }
+
   return config;
+};
+
+const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
+
+const cssLoaders = () => {
+  const loaders = [
+    {
+      loader: MiniCssExtractPlugin.loader,
+      options: {
+        hmr: isDev,
+        reloadAll: true,
+      },
+    },
+    "css-loader",
+  ];
+
+  return loaders;
 };
 
 module.exports = {
@@ -32,7 +54,8 @@ module.exports = {
     analytics: "./analytics.js",
   },
   output: {
-    filename: "[name].[contenthash].js",
+    filename: filename("js"),
+
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
@@ -61,7 +84,7 @@ module.exports = {
       ],
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: filename("css"),
     }),
   ],
 
@@ -69,31 +92,17 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev,
-              reloadAll: true,
-            },
-          },
-          "css-loader",
-        ],
+        use: cssLoaders(),
       },
 
       {
         test: /\.less$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev,
-              reloadAll: true,
-            },
-          },
-          "css-loader",
-          "less-loader",
-        ],
+        use: cssLoaders("less-loader"),
+      },
+
+      {
+        test: /\.s[ac]ss$/,
+        use: cssLoaders("sass-loader"),
       },
 
       {

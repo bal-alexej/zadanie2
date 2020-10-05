@@ -118,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post */ \"./Post.js\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/styles.css */ \"./styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _img_rastr_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/rastr.png */ \"./img/rastr.png\");\n/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./less/styles.less */ \"./less/styles.less\");\n/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_less_styles_less__WEBPACK_IMPORTED_MODULE_3__);\n// import * as $ from 'jquery'\r\n\r\n\r\n\r\n// import '@s/styles.css'\r\n\r\n\r\n\r\nconst post = new _Post__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Webpack Post Title', _img_rastr_png__WEBPACK_IMPORTED_MODULE_2__[\"default\"])\r\n\r\nconsole.log('Post to String:', post.toString())\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post */ \"./Post.js\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/styles.css */ \"./styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _img_rastr_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/rastr.png */ \"./img/rastr.png\");\n/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./less/styles.less */ \"./less/styles.less\");\n/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_less_styles_less__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sass/style.scss */ \"./sass/style.scss\");\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_4__);\n// import * as $ from 'jquery'\r\n\r\n\r\n\r\n// import '@s/styles.css'\r\n\r\n\r\n\r\n\r\n\r\nconst post = new _Post__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Webpack Post Title', _img_rastr_png__WEBPACK_IMPORTED_MODULE_2__[\"default\"])\r\n\r\nconsole.log('Post to String:', post.toString())\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -130,6 +130,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Pos
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./less/styles.less?");
+
+/***/ }),
+
+/***/ "./sass/style.scss":
+/*!*************************!*\
+  !*** ./sass/style.scss ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./sass/style.scss?");
 
 /***/ }),
 

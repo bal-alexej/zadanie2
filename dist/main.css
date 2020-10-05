@@ -374,13 +374,28 @@ h1 {
   margin: 0 auto;
 }
 
+@border: 1px solid #ccc;
+
 .box {
   padding: 1rem;
   border-radius: 5px;
   margin-top: 1rem;
+  h2 {
+    text-align: center;
+    color: red;
+  }
 }
-.box h2 {
-  text-align: center;
-  color: border;
+
+$border: 1px solid #ccc;
+
+.card {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  border: $border;
+  h2 {
+    text-align: center;
+    color: green;
+  }
 }
 
