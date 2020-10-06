@@ -1,6 +1,8 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {
+  CleanWebpackPlugin
+} = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
@@ -29,22 +31,25 @@ const optimization = (extra) => {
   return config;
 };
 
-const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
-const cssLoaders = () => {
-  const loaders = [
-    {
+const cssLoaders = extra => {
+  const loaders = [{
       loader: MiniCssExtractPlugin.loader,
       options: {
         hmr: isDev,
-        reloadAll: true,
+        reloadAll: true
       },
     },
-    "css-loader",
-  ];
+    'css-loader'
+  ]
 
-  return loaders;
-};
+  if (extra) {
+    loaders.push(extra)
+  }
+
+  return loaders
+}
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -76,12 +81,10 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "src/img/i.ico"), //откуда и что перемещать,
-          to: path.resolve(__dirname, "dist"), //куда перемещать
-        },
-      ],
+      patterns: [{
+        from: path.resolve(__dirname, "src/img/i.ico"), //откуда и что перемещать,
+        to: path.resolve(__dirname, "dist"), //куда перемещать
+      }, ],
     }),
     new MiniCssExtractPlugin({
       filename: filename("css"),
@@ -89,8 +92,7 @@ module.exports = {
   ],
 
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: cssLoaders(),
       },
