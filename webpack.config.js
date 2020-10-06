@@ -1,6 +1,8 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {
+  CleanWebpackPlugin
+} = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
@@ -32,8 +34,7 @@ const optimization = (extra) => {
 const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 
 const cssLoaders = (extra) => {
-  const loaders = [
-    {
+  const loaders = [{
       loader: MiniCssExtractPlugin.loader,
       options: {
         hmr: isDev,
@@ -50,11 +51,24 @@ const cssLoaders = (extra) => {
   return loaders;
 };
 
+const babelOptions = preset => {
+  const opts = {
+    presets: ["@babel/preset-env"],
+    plugins: ["@babel/plugin-proposal-class-properties"]
+  }
+
+  if (preset) {
+    opts.presets.push(preset)
+  }
+
+  return opts
+}
+
 module.exports = {
   context: path.resolve(__dirname, "src"),
   mode: "development",
   entry: {
-    main: ["@babel/polyfill", "./index.js"],
+    main: ["@babel/polyfill", "./index.jsx"],
     analytics: "./analytics.ts",
   },
   output: {
@@ -80,12 +94,10 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "src/img/i.ico"), //откуда и что перемещать,
-          to: path.resolve(__dirname, "dist"), //куда перемещать
-        },
-      ],
+      patterns: [{
+        from: path.resolve(__dirname, "src/img/i.ico"), //откуда и что перемещать,
+        to: path.resolve(__dirname, "dist"), //куда перемещать
+      }, ],
     }),
     new MiniCssExtractPlugin({
       filename: filename("css"),
@@ -93,8 +105,7 @@ module.exports = {
   ],
 
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: cssLoaders(),
       },
@@ -130,10 +141,7 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-            plugins: ["@babel/plugin-proposal-class-properties"],
-          },
+          options: babelOptions(),
         },
       },
       {
@@ -141,10 +149,15 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-typescript"],
-            plugins: ["@babel/plugin-proposal-class-properties"],
-          },
+          options: babelOptions("@babel/preset-typescript"),
+        },
+      },
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: babelOptions("@babel/preset-react"),
         },
       },
     ],
