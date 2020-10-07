@@ -1,12 +1,11 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const {
-  CleanWebpackPlugin
-} = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
+const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
@@ -34,7 +33,8 @@ const optimization = (extra) => {
 const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 
 const cssLoaders = (extra) => {
-  const loaders = [{
+  const loaders = [
+    {
       loader: MiniCssExtractPlugin.loader,
       options: {
         hmr: isDev,
@@ -65,17 +65,47 @@ const babelOptions = (preset) => {
 };
 
 const jsLoaders = () => {
-  const loaders = [{
-    loader: "babel-loader",
-    options: babelOptions()
-  }]
+  const loaders = [
+    {
+      loader: "babel-loader",
+      options: babelOptions(),
+    },
+  ];
 
   if (isDev) {
-    loaders.push("eslint-loader")
+    loaders.push("eslint-loader");
   }
 
-  return loaders
-}
+  return loaders;
+};
+
+const plugins = () => {
+  const base = [
+    new HTMLWebpackPlugin({
+      template: "./index.html",
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/img/i.ico"), //откуда и что перемещать,
+          to: path.resolve(__dirname, "dist"), //куда перемещать
+        },
+      ],
+    }),
+    new MiniCssExtractPlugin({
+      filename: filename("css"),
+    }),
+  ];
+
+  if (isProd) {
+    base.push(new BundleAnalyzerPlugin());
+  }
+  return base;
+};
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -99,27 +129,11 @@ module.exports = {
     hot: isDev,
   },
   devtool: isDev ? "source-map" : " ",
-  plugins: [
-    new HTMLWebpackPlugin({
-      template: "./index.html",
-      minify: {
-        collapseWhitespace: isProd,
-      },
-    }),
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [{
-        from: path.resolve(__dirname, "src/img/i.ico"), //откуда и что перемещать,
-        to: path.resolve(__dirname, "dist"), //куда перемещать
-      }, ],
-    }),
-    new MiniCssExtractPlugin({
-      filename: filename("css"),
-    }),
-  ],
+  plugins: plugins(),
 
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.css$/,
         use: cssLoaders(),
       },
@@ -153,7 +167,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: jsLoaders()
+        use: jsLoaders(),
       },
       {
         test: /\.ts$/,
