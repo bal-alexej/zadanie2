@@ -140,10 +140,7 @@ module.exports = {
   devServer: {
     port: 4200,
     hot: isDev,
-    // watchContentBase: true,
-		// inline: true,
-		// hotOnly: false,
-		// liveReload: isDev
+
   },
   devtool: isDev ? "source-map" : " ",
   plugins: plugins(),
