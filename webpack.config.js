@@ -96,7 +96,7 @@ const plugins = () => {
     // }),
     //Настройка pug
     new HTMLWebpackPlugin({
-      template: PATHS.src + '/pug/index.pug'
+      template: PATHS.src + '/pug/pages/index.pug'
     }),
     //
     new CleanWebpackPlugin(),
