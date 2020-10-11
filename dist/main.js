@@ -224,54 +224,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./Post.js":
-/*!*****************!*\
-  !*** ./Post.js ***!
-  \*****************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Post; });
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Post = /*#__PURE__*/function () {
-  function Post(title, img) {
-    _classCallCheck(this, Post);
-
-    this.title = title;
-    this.img = img;
-    this.date = new Date();
-  }
-
-  _createClass(Post, [{
-    key: "toString",
-    value: function toString() {
-      return JSON.stringify({
-        title: this.title,
-        date: this.date.toJSON(),
-        img: this.img
-      });
-    }
-  }, {
-    key: "uppercaseTitle",
-    get: function get() {
-      return this.title.toUppetCase();
-    }
-  }]);
-
-  return Post;
-}();
-
-
-
-/***/ }),
-
 /***/ "./babel.js":
 /*!******************!*\
   !*** ./babel.js ***!
@@ -330,19 +282,6 @@ __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.t.bind(null, /
 
 /***/ }),
 
-/***/ "./img/rastr.png":
-/*!***********************!*\
-  !*** ./img/rastr.png ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "2397040984c58d83908ac4078c42d61b.png");
-
-/***/ }),
-
 /***/ "./index.js":
 /*!******************!*\
   !*** ./index.js ***!
@@ -352,27 +291,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post */ "./Post.js");
-/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/styles.css */ "./styles/styles.css");
-/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _img_rastr_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/rastr.png */ "./img/rastr.png");
-/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./less/styles.less */ "./less/styles.less");
-/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_less_styles_less__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sass/style.scss */ "./sass/style.scss");
-/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./babel */ "./babel.js");
-/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sass/style.scss */ "./sass/style.scss");
+/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./babel */ "./babel.js");
+/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel__WEBPACK_IMPORTED_MODULE_1__);
 // import * as $ from "jquery"
-
-
- // import React from "react"
+// import React from "react"
 // import { render } from "react-dom"
 
-
-
-
-var post = new _Post__WEBPACK_IMPORTED_MODULE_0__["default"]("Webpack Post Title", _img_rastr_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
-console.log("Post to String:", post.toString()); // const App = () => (
+ // const App = () => (
 //   <div className="container">
 //     <h1>Webpack Course</h1>
 //     <hr />
@@ -390,36 +317,10 @@ console.log("Post to String:", post.toString()); // const App = () => (
 
 /***/ }),
 
-/***/ "./less/styles.less":
-/*!**************************!*\
-  !*** ./less/styles.less ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-    if(false) { var cssReload; }
-  
-
-/***/ }),
-
 /***/ "./sass/style.scss":
 /*!*************************!*\
   !*** ./sass/style.scss ***!
   \*************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-    if(false) { var cssReload; }
-  
-
-/***/ }),
-
-/***/ "./styles/styles.css":
-/*!***************************!*\
-  !*** ./styles/styles.css ***!
-  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

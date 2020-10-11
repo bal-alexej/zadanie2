@@ -1,12 +1,13 @@
 $border: 1px solid #ccc;
 
-.card {
-  padding: 1rem;
+.container {
+  padding: 10rem;
   border-radius: 5px;
   margin-top: 1rem;
   border: $border;
-  h2 {
+  p {
     text-align: center;
-    color: green;
+    color: red;
   }
 }
+
