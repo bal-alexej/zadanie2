@@ -10,11 +10,12 @@ const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 
+//Настройка pug  
 const PATHS = {
   src: path.join(__dirname, 'src'),
   dist: path.join(__dirname, 'dist')
 };
-
+//
 
 const optimization = (extra) => {
   const config = {
@@ -93,9 +94,11 @@ const plugins = () => {
     //     collapseWhitespace: isProd,
     //   },
     // }),
+    //Настройка pug
     new HTMLWebpackPlugin({
-      template: PATHS.src + '/index.pug'
+      template: PATHS.src + '/pug/index.pug'
     }),
+    //
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
