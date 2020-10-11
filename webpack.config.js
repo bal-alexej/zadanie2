@@ -10,6 +10,12 @@ const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 
+const PATHS = {
+  src: path.join(__dirname, 'src'),
+  dist: path.join(__dirname, 'dist')
+};
+
+
 const optimization = (extra) => {
   const config = {
     splitChunks: {
@@ -81,11 +87,14 @@ const jsLoaders = () => {
 
 const plugins = () => {
   const base = [
+    // new HTMLWebpackPlugin({
+    //   template: "./index.html",
+    //   minify: {
+    //     collapseWhitespace: isProd,
+    //   },
+    // }),
     new HTMLWebpackPlugin({
-      template: "./index.html",
-      minify: {
-        collapseWhitespace: isProd,
-      },
+      template: PATHS.src + '/index.pug'
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
@@ -111,7 +120,7 @@ module.exports = {
   context: path.resolve(__dirname, "src"),
   mode: "development",
   entry: {
-    main: ["@babel/polyfill", "./index.jsx"],
+    main: ["@babel/polyfill", "./index.js"],
     analytics: "./analytics.ts",
   },
   output: {
@@ -184,6 +193,13 @@ module.exports = {
           loader: "babel-loader",
           options: babelOptions("@babel/preset-react"),
         },
+      },
+      {
+        test: /\.pug$/,
+        loader: "pug-loader",
+        options: {
+          pretty: true
+        }
       },
     ],
   },

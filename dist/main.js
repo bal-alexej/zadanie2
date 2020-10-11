@@ -343,10 +343,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./index.jsx":
-/*!*******************!*\
-  !*** ./index.jsx ***!
-  \*******************/
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -356,41 +356,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/styles.css */ "./styles/styles.css");
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _img_rastr_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/rastr.png */ "./img/rastr.png");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-dom */ "../node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./less/styles.less */ "./less/styles.less");
-/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_less_styles_less__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sass/style.scss */ "./sass/style.scss");
-/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./babel */ "./babel.js");
-/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./less/styles.less */ "./less/styles.less");
+/* harmony import */ var _less_styles_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_less_styles_less__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sass/style.scss */ "./sass/style.scss");
+/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./babel */ "./babel.js");
+/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel__WEBPACK_IMPORTED_MODULE_5__);
 // import * as $ from "jquery"
 
 
-
-
+ // import React from "react"
+// import { render } from "react-dom"
 
 
 
 
 var post = new _Post__WEBPACK_IMPORTED_MODULE_0__["default"]("Webpack Post Title", _img_rastr_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
-console.log("Post to String:", post.toString());
-
-var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h1", null, "Webpack Course"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-    className: "logo"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-    className: "box"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h2", null, "less")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-    className: "card"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h2", null, "scss")));
-};
-
-Object(react_dom__WEBPACK_IMPORTED_MODULE_4__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(App, null), document.getElementById("app"));
+console.log("Post to String:", post.toString()); // const App = () => (
+//   <div className="container">
+//     <h1>Webpack Course</h1>
+//     <hr />
+//     <div className="logo"></div>
+//     <hr />
+//     <div className="box">
+//       <h2>less</h2>
+//     </div>
+//     <div className="card">
+//       <h2>scss</h2>
+//     </div>
+//   </div>
+// );
+// render(<App />, document.getElementById("app"));
 
 /***/ }),
 
@@ -434,14 +430,14 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_4__["render"])( /*#__PURE__*/react__WE
 /***/ }),
 
 /***/ 0:
-/*!*****************************************!*\
-  !*** multi @babel/polyfill ./index.jsx ***!
-  \*****************************************/
+/*!****************************************!*\
+  !*** multi @babel/polyfill ./index.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! @babel/polyfill */"../node_modules/@babel/polyfill/lib/index.js");
-module.exports = __webpack_require__(/*! ./index.jsx */"./index.jsx");
+module.exports = __webpack_require__(/*! ./index.js */"./index.js");
 
 
 /***/ })
