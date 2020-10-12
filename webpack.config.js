@@ -10,10 +10,10 @@ const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plug
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 
-//Настройка pug  
+//Настройка pug
 const PATHS = {
-  src: path.join(__dirname, 'src'),
-  dist: path.join(__dirname, 'dist')
+  src: path.join(__dirname, "src"),
+  dist: path.join(__dirname, "dist"),
 };
 //
 
@@ -96,7 +96,7 @@ const plugins = () => {
     // }),
     //Настройка pug
     new HTMLWebpackPlugin({
-      template: PATHS.src + '/pug/pages/index.pug'
+      template: PATHS.src + "/pug/pages/index.pug",
     }),
     //
     new CleanWebpackPlugin(),
@@ -114,10 +114,10 @@ const plugins = () => {
   ];
   //lodash
   // if (isProd) {
-  //   base.push(new BundleAnalyzerPlugin());     
+  //   base.push(new BundleAnalyzerPlugin());
   // }
 
-   return base;
+  return base;
 };
 
 module.exports = {
@@ -140,7 +140,6 @@ module.exports = {
   devServer: {
     port: 4200,
     hot: isDev,
-
   },
   devtool: isDev ? "source-map" : " ",
   plugins: plugins(),
@@ -203,8 +202,8 @@ module.exports = {
         test: /\.pug$/,
         loader: "pug-loader",
         options: {
-          pretty: true
-        }
+          pretty: true,
+        },
       },
     ],
   },
