@@ -100,14 +100,14 @@ const plugins = () => {
     }),
     //
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "src/img/i.ico"), //откуда и что перемещать,
-          to: path.resolve(__dirname, "dist"), //куда перемещать
-        },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.resolve(__dirname, "src/img/i.ico"), //откуда и что перемещать,
+    //       to: path.resolve(__dirname, "dist"), //куда перемещать
+    //     },
+    //   ],
+    // }),
     new MiniCssExtractPlugin({
       filename: filename("css"),
     }),
@@ -125,7 +125,7 @@ module.exports = {
   mode: "development",
   entry: {
     main: ["@babel/polyfill", "./index.js"],
-    analytics: "./analytics.ts",
+    // analytics: "./analytics.ts",
   },
   output: {
     filename: filename("js"),
