@@ -1,22 +1,36 @@
-.color__color_zwet {
-  height: 70px;
-  width: 70px;
-  left: 150px;
-  top: 145px;
-  border-radius: 6px;
-  background-color: #000;
-}
-
 .color {
   // border: 2px solid red;
   .color__color {
+    display: flex;
     border: 2px solid green;
   }
   padding-top: 20px;
   .color__color_zwet {
-    border: 2px solid red;
+    border: 2px solid yellow;
+    margin-right: 40px;
+    border-radius: 6px;
+    height: 70px;
+    width: 70px;
+    left: 150px;
+    top: 145px;
+    border-radius: 6px;
+    background-color: green;
   }
+  .color__color_zwet:nth-child(1) {
+    background-color: #1f2041;
+  }
+  .color__color_zwet:nth-child(2) {
+    background-color: red;
+  }
+  
   .color__text {
     border: 2px solid red;
+    p {
+      display: inline;
+      font-weight: 700;
+    }
+    span {
+      font-weight: 400;
+    }
   }
 }
