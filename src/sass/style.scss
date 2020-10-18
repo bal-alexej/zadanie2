@@ -8,7 +8,6 @@ body {
     display: inline-block;
     height: 900px;
     width: 1440px;
-    border: 3px solid blue;
   }
 }
 
@@ -28,41 +27,68 @@ body {
 }
 .color {
   position: absolute;
-  position: relative;
-  width: 269.26px;
+  display: inline-block;
+  width: 269px;
   height: 610px;
-  left: 149.74px;
+  left: 150px;
   top: 0px;
-  border: 2px solid green;
   .color__color {
-    border: 2px solid green;
+    text-align: left;
+    position: relative;
+    margin-bottom: 5px;
   }
   .color__color_zwet {
-    position: absolute;
-    text-align: left;
-    // border: 2px solid yellow;
     border-radius: 6px;
+    display: inline-block;
+    text-align: left;
     height: 70px;
     width: 70px;
     border-radius: 6px;
     background-color: #1f2041;
+    // margin-top: 20px;
+    &:nth-child(1) {
+      background: red;
+    }
   }
 
   .color__text {
+    text-align: right;
+    display: inline-block;
     position: absolute;
-    // border: 2px solid red;
-    width: 160px;
-    right: 0px;
+    left: 110px;
+    top: 8px;
     p {
-      font-size: 19px;
       width: 160px;
+      font-size: 19px;
       font-weight: 700;
-      text-align-last: left;
+      text-align: left;
     }
     span {
       font-weight: 400;
     }
   }
+}
+
+#z1 {
+  background-color: #000;
+}
+#z2 {
+  background-color: #575870;
+}
+#z3 {
+  background-color: #8f8fa0;
+}
+#z4 {
+  background-color: #c7c7cf;
+}
+#z5 {
+  background-color: #f4f4f6;
+}
+#z6 {
+  background-color: #bc9cff;
+}
+#z7 {
+  background-color: #6fcf97;
 }
 
 // .ColorTypeZagolowoki {
